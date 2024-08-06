@@ -1,0 +1,37 @@
+.carritoMovil {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000; 
+    transition: transform 0.3s ease;
+}
+
+.ImgDeCarritoMovil {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 100%;
+}
+
+.cantidaProductoCM {
+    font-weight: bold;
+}
+
+.cerrarCarrito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+}

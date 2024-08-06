@@ -1,0 +1,943 @@
+/* General */
+/* Teléfonos móviles y dispositivos pequeños */
+@media (max-width: 480px) {
+    .tituloDeLaPagina{
+        font-size: 1.5rem;
+        margin-top: 11%;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    } 
+
+    .ContenedorContanto {
+        padding: 10px;
+    }
+
+    .tituloDeContanto {
+        font-size: 20px;
+    }
+
+    .textoDeContanto {
+        font-size: 14px;
+    }
+
+    .subMenuDeContanto {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .iconoHistoria {
+        margin-bottom: 5px;
+    } 
+    
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+    }
+
+    .tituloDeLaPagina {
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-container {
+        padding: 10px;
+    }
+
+    .superMenu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .superMenu li {
+        margin: 5px 0;
+    }
+
+    .contenedorPricipalProducto {
+        padding: 2rem;
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        margin: 2rem auto;
+        text-align: center;
+    }
+    
+    .tituloDeProductoPricipal {
+        cursor: pointer;
+        background-color: #28a745;
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+        font-family: "Dancing Script", cursive;
+        font-weight: 600;
+    }
+    
+    .GrupoDeProducto {
+        background-color: #e2f8e0;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .menu {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .subMenu {
+        flex: 0 0 auto;
+        width: 300px;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .imgDeMenu {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .MenuDeIngeriente {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: #010a14;
+        text-align: center;
+        font-family: "Indie Flower", cursive;
+        font-weight: 400;
+    }
+    
+    .textoDeMenutext {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: #010a14;
+        text-align: center;
+        font-family: "Montserrat Alternates", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+    }
+    
+    .botonDeMenu {
+        background-color: #28a745;
+        border: none;
+        color: white;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 0.5rem;
+        transition: background-color 0.3s, transform 0.3s;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .botonDeMenu:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    main {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    body {
+        margin-left: 0;
+    }
+
+    .sectionDeAcciones {
+        margin-top: 3%;
+    }
+
+    .TituloDeCarrito {
+        font-size: 2rem;
+    }
+
+    .listaDeCarrito .list-group-item {
+        font-size: 14px;
+    }
+
+    .totalDeCarritos {
+        font-size: 16px;
+    }
+
+    .botonDeCarritos {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .TitulosDeAcciones {
+        font-size: 2rem;
+    }
+
+    .botonAccion {
+        font-size: 0.9rem;
+        width: 25%;
+    }
+
+    .botonAccion:hover {
+        font-size: 2rem;
+    }
+
+    .tituloCatds {
+        font-size: 2rem;
+    }
+
+    .acciones {
+        height: 5%;
+    }
+
+    .mapa iframe {
+        width: 100%;
+        height: 200px;
+    }
+
+    .videos-restaurante {
+        display: none;
+    }
+
+    .tituloDeOpiniones {
+        font-size: 2rem;
+    }
+
+    .nombreCliente {
+        font-size: 1.8rem;
+    }
+
+    .comentarioCliente {
+        font-size: 0.8em;
+    }
+
+    .valoracionCliente {
+        font-size: 0.9em;
+    }
+
+    .opinionParrafo {
+        font-size: 1rem;
+    }
+
+    .formularioOpinion {
+        padding: 10px;
+    }
+
+    .tituloDeFormularios {
+        font-size: 25px;
+    }
+
+    .OpiccionesEscrivir,
+    .opiccionesTexto,
+    .opiccionesSelect {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .BotonDeFormulario {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .textoDePie {
+        font-size: 0.875rem;
+    }
+
+    .carousel-item img {
+        height: 200px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .opcionesTe {
+        width: 100%;
+    }
+
+    .contenedorTe{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mostrarTeBoton {
+        width: 100%;
+    }
+
+    .opcionesDeProducto {
+        padding: 8px;
+    }
+
+    .tituloDeProductoPricipal {
+        font-size: 1.8rem;
+    }
+
+    .SubTituloDeProducto {
+        font-size: 1.6rem;
+    }
+
+    .MenuDeIngeriente {
+        font-size: 0.9rem;
+    }
+
+    .textoDeMenutext {
+        font-size: 0.8rem;
+    }
+
+    .botonDeNota {
+        font-size: 14px;
+    }
+
+    .opcionesDeProducto {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .opcionesDeProducto::after {
+        font-size: 10px;
+        right: 10px;
+    }
+
+    .TituloDeCarrito {
+        font-size: 1.2rem;
+    }
+
+    .listaDeCarrito .list-group-item {
+        font-size: 14px;
+    }
+
+    .totalDeCarritos {
+        font-size: 16px;
+    }
+
+    .botonDeCarritos {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .TituloDeCarrito {
+        font-size: 1.2rem;
+    }
+
+    .listaDeCarrito .list-group-item {
+        font-size: 14px;
+    }
+
+    .totalDeCarritos {
+        font-size: 16px;
+    }
+
+    .botonDeCarritos {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .bebida {
+        flex: 1 1 100px; 
+        padding: 5px;
+    }
+
+    .nombreBebida {
+        font-size: 12px;
+    }
+
+    .ingredientesBebida {
+        font-size: 10px;
+    }
+
+    .btnExpansible {
+        font-size: 14px;
+    }
+
+    .TituloDeBebidas {
+        font-size: 1.2rem; 
+    }
+
+    .ContenedorHistoria {
+        padding: 10px;
+    }
+    .tituloDeHistoria {
+        font-size: 18px;
+    }
+    .subTituloDeHistoria {
+        font-size: 16px;
+    }
+    .textoDeHistoria {
+        font-size: 14px;
+    }
+    .imgDeLaHistoria {
+        width: 100%;
+        height: auto;
+    }
+    ul.menuDeHistoria li img {
+        width: 20px;
+        height: 20px;
+    }
+    .iconoHistoria {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 600px) {
+    .ubicacion {
+        padding: 15px;
+    }
+
+    .ubicacionTitulo {
+        font-size: 2rem;
+    }
+
+    .direccionTexto {
+        font-size: 2rem;
+    }
+
+    .direcionParrafo {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width:481px) and (max-width: 768px) {
+
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 30px;
+        right: 30px;
+    }
+    
+    .ContenedorContanto {
+        padding: 15px;
+    }
+
+    .tituloDeContanto {
+        font-size: 22px;
+    }
+
+    .textoDeContanto {
+        font-size: 15px;
+    }
+
+    .subMenuDeContanto {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .iconoHistoria {
+        margin-bottom: 5px;
+    }
+
+    .ContenedorHistoria {
+        padding: 15px;
+    }
+    .tituloDeHistoria {
+        font-size: 20px;
+    }
+    .subTituloDeHistoria {
+        font-size: 18px;
+    }
+    .textoDeHistoria {
+        font-size: 15px;
+    }
+    .imgDeLaHistoria {
+        width: 100%;
+        height: auto;
+    }
+    ul.menuDeHistoria li img {
+        width: 22px;
+        height: 22px;
+    }
+    .iconoHistoria {
+        width: 20px;
+        height: 20px;
+    }
+
+    .bebida {
+        flex: 1 1 150px; 
+    }
+
+    .nombreBebida {
+        font-size: 14px;
+    }
+
+    .ingredientesBebida {
+        font-size: 12px;
+    }
+
+    .btnExpansible {
+        font-size: 16px;
+    }
+
+    .TituloDeBebidas {
+        font-size: 1.5rem; 
+    }
+
+    .TituloDeCarrito {
+        font-size: 1.5rem;
+    }
+
+    .listaDeCarrito .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .totalDeCarritos {
+        font-size: 18px;
+    }
+
+    .botonDeCarritos {
+        font-size: 16px;
+    }
+
+    .TituloDeCarrito {
+        font-size: 1.5rem;
+    }
+
+    .listaDeCarrito .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .totalDeCarritos {
+        font-size: 18px;
+    }
+
+    .botonDeCarritos {
+        font-size: 16px;
+    }
+
+    /* Mostrar carrito móvil */
+    .carritoMovil {
+        display: flex;
+    }
+
+    /* Ocultar carrito fijo en móviles */
+    .Carritos {
+        display: none;
+    }
+
+    .opcionesDeProducto {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .opcionesDeProducto::after {
+        font-size: 12px;
+        right: 15px;
+    }
+
+    .Nota {
+        padding: 15px;
+    }
+
+    .menu {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* Ajuste automático con mínimo de 200px */
+    }
+
+    .tituloDeProductoPricipal {
+        font-size: 2rem;
+    }
+
+    .SubTituloDeProducto {
+        font-size: 1.8rem;
+    }
+
+    .MenuDeIngeriente {
+        font-size: 1rem;
+    }
+
+    .textoDeMenutext {
+        font-size: 0.9rem;
+    }
+
+    .menuDeTitulosDeContenedor {
+        margin-top: 10%;
+    }
+
+    .opcionesDeProducto {
+        font-size: 14px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .superMenu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Menu {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: none;
+    }
+
+    .nav-link,
+    .navLink {
+        width: auto;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .tituloDeLaPagina {
+        font-size: 2rem;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .cardMenuGrupo {
+        height: 355px;
+    }
+
+    main {
+        padding-left: 1rem;
+    }
+
+    .TituloDeCarrito {
+        font-size: 2.5rem;
+    }
+
+    .listaDeCarrito .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .totalDeCarritos {
+        font-size: 18px;
+    }
+
+    .botonDeCarritos {
+        font-size: 16px;
+    }
+
+    /* Mostrar carrito móvil */
+    .carritoMovil {
+        display: flex;
+    }
+
+    /* Ocultar carrito fijo en móviles */
+    .Carritos {
+        display: none;
+    }
+
+    .TitulosDeAcciones {
+        font-size: 2.5rem;
+    }
+
+    .contenedorDeAcciones {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .acciones {
+        width: 100%;
+        margin: 10px 0;
+        flex: 0px;
+        border-radius: 20%;
+    }
+
+    .botonAccion {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mapa iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .videoWrapper {
+        width: 45%;
+    }
+
+    .videosTitulo {
+        font-size: 2.5rem;
+
+    }
+
+
+    .tituloDeOpiniones {
+        font-size: 2.5rem;
+    }
+
+    .opinion {
+        margin-top: 3%;
+        padding: 10px;
+    }
+
+    .nombreCliente {
+        font-size: 2rem;
+    }
+
+    .comentarioCliente {
+        font-size: 0.9em;
+    }
+
+    .valoracionCliente {
+        font-size: 1em;
+    }
+
+    .formularioOpinion {
+        padding: 15px;
+    }
+
+    .tituloDeFormularios {
+        font-size: 30px;
+    }
+
+    .OpiccionesEscrivir,
+    .opiccionesTexto,
+    .opiccionesSelect {
+        padding: 9px;
+        font-size: 0.95rem;
+    }
+
+    .BotonDeFormulario {
+        padding: 13px;
+        font-size: 0.95rem;
+    }
+
+    .textoDePie {
+        font-size: 1rem;
+    }
+}
+
+/* Ajuste para pantallas medianas */
+@media (min-width: 769px) and (max-width: 992px) {
+
+    .ContenedorContanto {
+        padding: 20px;
+    }
+
+    .tituloDeContanto {
+        font-size: 24px;
+    }
+
+    .textoDeContanto {
+        font-size: 16px;
+    }
+
+    .ContenedorHistoria {
+        padding: 20px;
+    }
+    .tituloDeHistoria {
+        font-size: 22px;
+    }
+    .subTituloDeHistoria {
+        font-size: 19px;
+    }
+    .textoDeHistoria {
+        font-size: 16px;
+    }
+    .imgDeLaHistoria {
+        width: 100%;
+        height: auto;
+    }
+    ul.menuDeHistoria li img {
+        width: 24px;
+        height: 24px;
+    }
+    .iconoHistoria {
+        width: 22px;
+        height: 22px;
+    }
+
+    .tituloCatds {
+        font-size: 2rem;
+    }
+
+    .superMenu li {
+        margin: 0 8px;
+    }
+
+    .Menu {
+        min-width: 120px;
+    }
+
+    .videoWrapper {
+        width: 30%;
+    }
+
+    .textoDePie {
+        font-size: 1rem;
+    }
+
+    .formularioOpinion {
+        padding: 20px;
+    }
+
+    .tituloDeFormularios {
+        font-size: 35px;
+    }
+
+    .OpiccionesEscrivir,
+    .opiccionesTexto,
+    .opiccionesSelect {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .BotonDeFormulario {
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+    .ubicacion {
+        padding: 18px;
+    }
+
+    .ubicacionTitulo {
+        font-size: 2.5rem;
+    }
+
+    .direccionTexto {
+        font-size: 2.5rem;
+    }
+
+    .direcionParrafo {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ajuste para pantallas grandes */
+@media (min-width: 993px) {
+
+    .ContenedorContanto {
+        padding: 20px;
+    }
+
+    .tituloDeContanto {
+        font-size: 26px;
+    }
+
+    .textoDeContanto {
+        font-size: 18px;
+    }
+
+    .ContenedorHistoria {
+        padding: 20px;
+    }
+    .tituloDeHistoria {
+        font-size: 24px;
+    }
+    .subTituloDeHistoria {
+        font-size: 20px;
+    }
+    .textoDeHistoria {
+        font-size: 16px;
+    }
+    .imgDeLaHistoria {
+        width: 100%;
+        height: auto;
+    }
+    ul.menuDeHistoria li img {
+        width: 24px;
+        height: 24px;
+    }
+    .iconoHistoria {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .tituloCatds {
+        font-size: 2.5rem;
+    }
+
+    .superMenu li {
+        margin: 0 15px;
+    }
+
+    .Menu {
+        min-width: 180px;
+    }
+
+    .ubicacion {
+        padding: 20px;
+    }
+
+    .ubicacionTitulo {
+        font-size: 3rem;
+    }
+
+    .direccionTexto {
+        font-size: 3rem;
+    }
+
+    .direcionParrafo {
+        font-size: 1.2rem;
+    }
+
+    .textoDePie {
+        font-size: 1.125rem;
+    }
+
+    .formularioOpinion {
+        padding: 25px;
+    }
+
+    .tituloDeFormularios {
+        font-size: 40px;
+    }
+
+    .OpiccionesEscrivir,
+    .opiccionesTexto,
+    .opiccionesSelect {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+
+    .BotonDeFormulario {
+        padding: 18px;
+        font-size: 1.1rem;
+    }
+}

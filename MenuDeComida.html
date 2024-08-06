@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Monalisa</title>
+    <link rel="icon" href="Img/favicon.ico" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/Logo.css">
+    <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="css/carritoMovil.css">
+    <link rel="stylesheet" href="css/productosSalado.css">
+</head>
+
+<body>
+    <header class='contenedorNav'>
+        <nav class="grupoDeNav">
+            <div>
+                <button class="botonDeHamburguesa" type="button" onClick={toggleMenu}>
+                    <span class="hamburguesa"><img src="Img/hamburguesa.png" alt="hamburguesa" /></span>
+                </button>
+                <div class={`menu ${menuOpen ? 'menuAbierto' : '' }`} id="navbarNav">
+                    <ul class="navLista">
+                        <li class="navImput"><a class="navLink" href="Index.html#inicio">Inicio</a></li>
+                        <li class="navImput">
+                            <a class="navLink" href="MenuDeComida.html#comida_salada" id="comidaDropdown Salada">ComidaSalada</a>
+                            <ul class="subNav" aria-labelledby="comidaDropdown">
+                                <li class='navImput'><a class="navLink" href="#tostadas">Tostadas</a></li>
+                                <li class='navImput'><a class="navLink" href="#sandwich">Sandwich</a></li>
+                                <li class='navImput'><a class="navLink" href="#ensaladas">Ensaladas</a></li>
+                                <li class='navImput'><a class="navLink" href="#empanadas">Empanadas</a></li>
+                                <li class='navImput'><a class="navLink" href="#tartas">Tartas</a></li>
+                                <li class='navImput'><a class="navLink" href="#hamburguesas">Hamburguesas</a></li>
+                                <li class='navImput'><a class="navLink" href="#milanesas">Milanesas</a></li>
+                                <li class='navImput'><a class="navLink" href="#pizzas">Pizzas</a></li>
+                                <li class='navImput'><a class="navLink" href="#pastas">Pastas</a></li>
+                            </ul>
+                        </li>
+                        <li class="navImput">
+                            <a class="navLink" href="MenuDeComida.html#postres" id="postresDropdown">Postres</a>
+                            <ul class="subNav" aria-labelledby="postresDropdown">
+                                <li class='navImput'><a class="navLink" href="#cuadraditos">Cuadraditos</a></li>
+                                <li class='navImput'><a class="navLink" href="#muffin">Muffin</a></li>
+                                <li class='navImput'><a class="navLink" href="#alfajores">Alfajores</a></li>
+                                <li class='navImput'><a class="navLink" href="#tortas">Tortas</a></li>
+                                <li class='navImput'><a class="navLink" href="#tartas">Tartas</a></li>
+                                <li class='navImput'><a class="navLink" href="#budines">Budines</a></li>
+                                <li class='navImput'><a class="navLink" href="#otros-postres">Otros Postres</a></li>
+                            </ul>
+                        </li>
+                        <li class="navImput">
+                            <a class="navLink" href="#" id="bebidasDropdown">Bebidas</a>
+                            <ul class="subNav" aria-labelledby="bebidasDropdown">
+                                <li class='navImput'><a class="navLink" href="#cafe">Café</a></li>
+                                <li class='navImput'><a class="navLink" href="#té">Té</a></li>
+                                <li class='navImput'><a class="navLink" href="#licuados">Licuados</a></li>
+                                <li class='navImput'><a class="navLink" href="#jugos">Jugos</a></li>
+                                <li class='navImput'><a class="navLink" href="#otros-bebidas">Otros Bebidas</a></li>
+                            </ul>
+                        </li>
+                        <li class="navImput"><a class="navLink" href="#carritos">Pedidos</a></li>
+                        <li class="navImput"><a class="navLink" href="Index.html#contacto">Contacto</a></li>
+                        <li class="navImput"><a class="navLink" href="Index.html#ubicacion">Ubicación</a></li>
+                        <li class="navImput"><a class="navLink" href="Index.html#opiniones">Opinión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="TitulosDeContenedor">
+            <a href="#" class="LinkImg"><img src="Img/logo.png" alt="Logo"></a>
+            <h1 class="tituloDeLaPagina" id="inicio">Restaurante Monalisa</h1>
+        </section>
+
+        <section>
+            <!-- Carrito movil -->
+            <div id="cart-icon carritos" class="carritoMovil" onclick="mostrarCarritoDetallado()">
+                <img src="Img/carrito de compras.png" class="ImgDeCarritoMovil" alt="Carrito de Compras">
+                <span id="cart-count" class="cantidaProductoCM">0</span>
+            </div>
+        
+            <!-- Carrito de compras -->
+            <div id="carrito-detallado" class="carritoDetallado">
+                <div class="Carritos">
+                    <h2 class="TituloDeCarrito">Carrito de Compras</h2>
+                    <ul id="cart" class="listaDeCarrito"></ul>
+                    <p>Total: $<span id="total" class="totalDeCarritos">0.00</span></p>
+                    <button id="checkout" onclick="comprar()" class="botonDeCarritos">Finalizar Compra</button>
+                </div>
+                <!-- Botón para cerrar el modal -->
+                <button id="close-cart-btn" class="cerrarCarrito" onclick="ocultarCarritoDetallado()">Cerrar</button>
+            </div>
+        </section>
+
+               <!-- Comidas Salada -->
+               <section class="contenedorPricipalProducto">
+                <div id="contenedorDeProducto">
+                    <div class="ContenedorProductoAnimacion">
+                        <svg viewBox="0 0 630 50">
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#fcdf8a;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#f38381;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#c3ec52;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0ba29d;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#13f1fc;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0470dc;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#ce9ffc;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7367f0;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#f36265;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#961276;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <text x="220" y="50" font-family="Varela Round" font-size="40" class="path">S</text>
+                        <text x="250" y="50" font-family="Varela Round" font-size="40" class="path">A</text>
+                        <text x="280" y="50" font-family="Varela Round" font-size="40" class="path">L</text>
+                        <text x="310" y="50" font-family="Varela Round" font-size="40" class="path">A</text>
+                        <text x="340" y="50" font-family="Varela Round" font-size="40" class="path">D</text>
+                        <text x="370" y="50" font-family="Varela Round" font-size="40" class="path">A</text>
+                        </svg>
+                    </div>
+
+                    <!-- Comida Típica Latinoamericana -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 class="SubTituloDeProducto" id="comida-tipica">Comida Típica Latinoamericana</h3></div>
+                        <div class="Producto">
+
+                            <!-- Argentina -->
+                            <div class="subProducto">
+                                <img src="img/locro.jpg" class="imgDeProducto" alt="Locro">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Locro</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Locro" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Brasil -->
+                            <div class="subProducto">
+                                <img src="img/Coxinha.jpg" class="imgDeProducto" alt="Coxinha">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Coxinha</h4>
+                                    <p class="textoDeProductotext">Precio: $15000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Coxinha" data-price="15000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Chile -->
+                            <div class="subProducto">
+                                <img src="img/Sopaipillas.jpg" class="imgDeProducto" alt="Sopaipillas">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Sopaipillas</h4>
+                                    <p class="textoDeProductotext">Precio: $14000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sopaipillas" data-price="14000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Colombia -->
+                            <div class="subProducto">
+                                <img src="img/Tamal.jpg" class="imgDeProducto" alt="Tamal">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tamal</h4>
+                                    <p class="textoDeProductotext">Precio: $13000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tamal" data-price="13000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- México -->
+                            <div class="subProducto">
+                                <img src="img/Tacos al Pastor.jpg" class="imgDeProducto" alt="Tacos al Pastor">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tacos al Pastor</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tacos al Pastor" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Perú -->
+                            <div class="subProducto">
+                                <img src="img/ceviche.jpg" class="imgDeProducto" alt="Ceviche">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ceviche</h4>
+                                    <p class="textoDeProductotext">Precio: $15500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ceviche" data-price="15500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Venezuela -->
+                            <div class="subProducto">
+                                <img src="img/Tequeños.jpg" class="imgDeProducto" alt=" Tequeños">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tequeños</h4>
+                                    <p class="textoDeProductotext">Precio: $11000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name=" Tequeños" data-price="11000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Ecuador -->
+                            <div class="subProducto">
+                                <img src="img/Fanesca.jpeg" class="imgDeProducto" alt="Fanesca">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Fanesca</h4>
+                                    <p class="textoDeProductotext">Precio: $12500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Fanesca" data-price="12500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Bolivia -->
+                            <div class="subProducto">
+                                <img src="img/silpancho.jpg" class="imgDeProducto" alt="Silpancho">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Silpancho</h4>
+                                    <p class="textoDeProductotext">Precio: $10500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Silpancho" data-price="10500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Uruguay -->
+                            <div class="subProducto">
+                                <img src="img/chivito.jpg" class="imgDeProducto" alt="Chivito">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Chivito</h4>
+                                    <p class="textoDeProductotext">Precio: $14000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Chivito" data-price="14000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Paraguay -->
+                            <div class="subProducto">
+                                <img src="img/Sopa Paraguaya.jpg" class="imgDeProducto" alt="Sopa Paraguaya">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Sopa Paraguaya</h4>
+                                    <p class="textoDeProductotext">Precio: $9500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sopa Paraguaya" data-price="9500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Puerto Rico -->
+                            <div class="subProducto">
+                                <img src="img/mofongo.jpg" class="imgDeProducto" alt="Mofongo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Mofongo</h4>
+                                    <p class="textoDeProductotext">Precio: $11500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Mofongo" data-price="11500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- República Dominicana -->
+                            <div class="subProducto">
+                                <img src="img/mangú.jpg" class="imgDeProducto" alt="Mangú">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Mangú</h4>
+                                    <p class="textoDeProductotext">Precio: $11000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Mangú" data-price="11000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                              <!-- Paraguay  y Argentino-->
+                            <div class="subProducto">
+                                <img src="img/Chipa.jpeg" class="imgDeProducto" alt="Chipa">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Chipa</h4>
+                                    <p class="textoDeProductotext">Precio: $4000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Chipa" data-price="4000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Cuba -->
+                            <div class="subProducto">
+                                <img src="img/Ropa Vieja.jpg" class="imgDeProducto" alt="Ropa Vieja">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ropa Vieja</h4>
+                                    <p class="textoDeProductotext">Precio: $13500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ropa Vieja" data-price="13500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+    
+                    <!--Tostadas -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 class="SubTituloDeProducto" id="tostadas">Tostadas</h3></div>
+                        <div class="Producto">
+
+                            <div class="subProducto">
+                                <img src="Img/tostadas de huevo y plata.jpeg" class="imgDeProducto" alt="Tostadas de huevo y palta">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de huevo y palta</h4>
+                                    <div>
+                                        <label for="Pan">Elegir el pan:</label>
+                                        <select name="pan" id="pan" class="opcionesDeProducto" onchange="actualizarPan">
+                                            <option value="pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integar">Pan integar</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $4500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de salmón, huevo y palta" data-price="4500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                            
+                            <div class="subProducto">
+                                <img src="img/tostadas de remolacha y salmon.jpg" class="imgDeProducto" alt="Tostadas de remolacha y salmón">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de remolacha y salmón</h4>
+                                    <div>
+                                        <label for="Pan">Elegir el pan:</label>
+                                        <select name="pan" id="pan" class="opcionesDeProducto" onchange="actualizarPan">
+                                            <option value="pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integar">Pan integar</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $5000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de remolacha y salmón" data-price="5000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/tostadas de palta y tomate.jpg" class="imgDeProducto" alt="Tostadas de palta y tomate">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de palta y tomate</h4>
+                                    <div>
+                                        <label for="Pan">Elegir el pan:</label>
+                                        <select name="pan" id="pan" class="opcionesDeProducto" onchange="actualizarPan">
+                                            <option value="pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integar">Pan integar</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $4500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de palta y tomate" data-price=4500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                           
+                            <div class="subProducto">
+                                <img src="img/tostadas de jamón crudo y tomate y aceité.jpg" class="imgDeProducto" alt="Tostadas de jamón crudo y tomate y aceité">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de jamón crudo y tomate</h4>
+                                    <div>
+                                        <label for="Pan">Elegir el pan:</label>
+                                        <select name="pan" id="pan" class="opcionesDeProducto" onchange="actualizarPan">
+                                            <option value="pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integar">Pan integar</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $6300</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de jamón crudo y tomate y aceité" data-price="6300">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                            
+                            <div class="subProducto">
+                                <img src="img/tostadas de pollo y palta.jpg" class="imgDeProducto" alt="Tostadas de pollo y palta">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de pollo y palta</h4>
+                                    <div>
+                                        <label for="Pan">Elegir el pan:</label>
+                                        <select name="pan" id="pan" class="opcionesDeProducto" onchange="actualizarPan">
+                                            <option value="pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integar">Pan integar</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $4700</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de pollo y palta" data-price="4700">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/tostadas_queso_crema_y_miel.jpg" class="imgDeProducto" alt="Tostadas de queso crema, pera y miel">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de queso crema, pera y miel</h4>
+                                    <div>
+                                        <label for="pan_queso_crema_miel">Elegir el pan:</label>
+                                        <select name="pan" id="pan_queso_crema_miel" class="opcionesDeProducto" onchange="actualizarPan(this)">
+                                            <option value="Pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integral">Pan integral</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $4000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de queso crema, pera y miel" data-price="4000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                            
+                            <div class="subProducto">
+                                <img src="img/tostadas de avena y frutas.png" class="imgDeProducto" alt="Tostadas de avena y frutas">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de avena y frutas</h4>
+                                    <div>
+                                        <label for="pan_avena_frutas">Elegir el pan:</label>
+                                        <select name="pan" id="pan_avena_frutas" class="opcionesDeProducto" onchange="actualizarPan(this)">
+                                            <option value="Pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integral">Pan integral</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $4500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de avena y frutas" data-price="4500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                            
+                            <div class="subProducto">
+                                <img src="img/tostadas mango y miel.jpg" class="imgDeProducto" alt="Tostadas de mango y miel">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de mango y miel</h4>
+                                    <div>
+                                        <label for="pan_mango_miel">Elegir el pan:</label>
+                                        <select name="pan" id="pan_mango_miel" class="opcionesDeProducto" onchange="actualizarPan(this)">
+                                            <option value="Pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integral">Pan integral</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $4700</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de mango y miel" data-price="4700">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                            
+                            <div class="subProducto">
+                                <img src="img/tostadas de salmon, hurvo y plata.jpeg" class="imgDeProducto" alt="Tostadas de salmón, huevo y palta">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de salmón, huevo y palta</h4>
+                                    <div>
+                                        <label for="Pan">Elegir el pan:</label>
+                                        <select name="pan" id="pan" class="opcionesDeProducto" onchange="actualizarPan">
+                                            <option value="pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integar">Pan integar</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $5500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de salmón, huevo y palta" data-price="3200">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/tostada manteca y  dulce leche.png" class="imgDeProducto" alt="Tostadas de bacon y huevo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de Queso y manteca y dulce leche</h4>
+                                    <div>
+                                        <label for="Pan">Elegir el pan:</label>
+                                        <select name="pan" id="pan" class="opcionesDeProducto" onchange="actualizarPan">
+                                            <option value="pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integar">Pan integar</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $4000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de bacon y huevo" data-price="3600">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/Tostadas de Queso y mermelada.png" class="imgDeProducto" alt="Tostadas de Queso o manteca y mermelada">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de Queso o manteca y mermelada</h4>
+                                    <div>
+                                        <label for="Pan">Elegir el pan:</label>
+                                        <select name="pan" id="pan" class="opcionesDeProducto" onchange="actualizarPan">
+                                            <option value="pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integar">Pan integar</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $4000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de Queso o manteca y mermelada" data-price="4000">Agregar al Carrito</button>
+                                </div>
+                            </div> 
+
+                            <div class="subProducto">
+                                <img src="img/tostadas de champiñones y espinaca.jpg" class="imgDeProducto" alt="Tostadas de champiñones y espinaca">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tostadas de champiñones y espinaca</h4>
+                                    <div>
+                                        <label for="Pan">Elegir el pan:</label>
+                                        <select name="pan" id="pan" class="opcionesDeProducto" onchange="actualizarPan">
+                                            <option value="pan Blanco">Pan blanco</option>
+                                            <option value="Pan Integar">Pan integar</option>
+                                        </select>
+                                    </div>
+                                    <p class="textoDeProductotext">Precio: $4800</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tostadas de champiñones y espinaca" data-price="3800">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Sandwich  -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 class="SubTituloDeProducto" id="sandwich">Sandwich</h3></div>
+                        <div class="Producto">
+
+                            <div class="subProducto">
+                                <img src="img/sándwich  de queso y jamon crudo.jpg" class="imgDeProducto" alt="Sándwich de queso y jamon crudo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Sándwich de queso y jamon crudo</h4>
+                                    <p class="textoDeProductotext">Precio: $15200</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich de queso y jamon crudo" data-price="15200">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/sándwich de queso y jamon.jpg" class="imgDeProducto" alt="Sándwich de jyq">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Sándwich de jamon y queso</h4>
+                                    <p class="textoDeProductotext">Precio: $13800</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich de jyq" data-price="13800">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/sándwich de miga de queso y jamon crudo.jpg" class="imgDeProducto" alt="Sándwich de miga de queso y jamon crudo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Miga de queso y jamon crudo</h4>
+                                    <p class="textoDeProductotext">Precio: $15000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich de miga de queso y jamon crudo" data-price="15000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/sándwich de miga tortado jyq.jpeg" class="imgDeProducto" alt="Sándwich de miga tostado jyq">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Sándwich de miga tostado jyq</h4>
+                                    <p class="textoDeProductotext">Precio: $12800</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich de miga tostado jyq"data-price="12800">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/sandwich DE cebolla, pollo y queso.jpg" class="imgDeProducto" alt="Sándwich de pan árabe de cebolla, pollo y queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Sándwich de pollo y cebolla</h4>
+                                    <p class="textoDeProductotext">Precio: $12500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich de cebolla, pollo y queso" data-price="12500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/sándwich de salmón ahumado.jpg" class="imgDeProducto" alt="Sándwich de salmón ahumado">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Sándwich de salmón ahumado</h4>
+                                    <p class="textoDeProductotext">Precio: $16500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich de salmón ahumado" data-price="16500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/sándwich de pan árabe jamón crudo, queso.jpeg" class="imgDeProducto" alt="Sándwich de pan árabe jamón crudo, queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pan árabe jamón crudo, queso</h4>
+                                    <p class="textoDeProductotext">Precio: $13000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich de pan árabe jamón crudo, queso" data-price="13000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/Sandwich de pan arabe jamon y queso.jpg" class="imgDeProducto" alt="Sándwich de pan árabe jamón y queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pan árabe jamón y queso</h4>
+                                    <p class="textoDeProductotext">Precio: $13000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich de pan árabe jamón y queso" data-price="13000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/sándwich de pan árabe jamón, queso, tomate.png" class="imgDeProducto" alt="Sándwich de pan árabe jamón, queso, tomate">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pan árabe jamón, queso, tomate</h4>
+                                    <p class="textoDeProductotext">Precio: $10000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich de pan árabe jamón, queso, tomate" data-price="10000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/media luna qyj.jpg" class="imgDeProducto" alt="Media luna de jamón y queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Media luna de jamón y queso</h4>
+                                    <p class="textoDeProductotext">Precio: $1500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Media luna de jamón y queso" data-price="1500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <div class="subProducto">
+                                <img src="img/arepa_de_carne.jpg" class="imgDeProducto" alt="Arepa de carne">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Arepa</h4>
+                                    <p class="textoDeProductotext">Precio: $14000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Arepa" data-price="14000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                    
+                            <div class="subProducto">
+                                <img src="img/sándwich_vegetariano.jpg" class="imgDeProducto" alt="Sándwich vegetariano">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Sándwich vegetariano</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sándwich vegetariano" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Ensaladas -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 id="ensaladas" class="SubTituloDeProducto">Ensaladas</h3></div>
+                        <div class="Producto">
+                            <div class="subProducto">
+                                <img src="img/ensalada de pollo.jpg" class="imgDeProducto" alt="Ensalada de Pollo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ensalada de Pollo</h4>
+                                    <p class="textoDeProductotext">Precio: $5500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ensalada de Pollo" data-price="5500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Ensalada de actun.jpg" class="imgDeProducto" alt="Ensalada de Atún">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ensalada de Atún</h4>
+                                    <p class="textoDeProductotext">Precio: $5700</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ensalada de Atún" data-price="5700">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/ensalada de salmon.jpg" class="imgDeProducto" alt="Ensalada de Salmón">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ensalada de Salmón</h4>
+                                    <p class="textoDeProductotext">Precio: $6000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ensalada de Salmón" data-price="6000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/ensalada de carne.jpg" class="imgDeProducto" alt="Ensalada de Carne">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ensalada de Carne</h4>
+                                    <p class="textoDeProductotext">Precio: $5800</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ensalada de Carne" data-price="5800">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Ensalada de fideos.jpg" class="imgDeProducto" alt="Ensalada de Fideos">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ensalada de Fideos</h4>
+                                    <p class="textoDeProductotext">Precio: $4600</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ensalada de Fideos" data-price="4600">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Ensalada de clasicas.jpg" class="imgDeProducto" alt="Ensalada Clásica">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ensalada Clásica</h4>
+                                    <p class="textoDeProductotext">Precio: $4000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ensalada Clásica" data-price="4000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/ensalada de queso y tomate.jpeg" class="imgDeProducto" alt="Ensalada de Queso y Tomate">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ensalada de Queso y Tomate</h4>
+                                    <p class="textoDeProductotext">Precio: $5500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ensalada de Queso y Tomate" data-price="5500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Ensalada de  lentejas.jpeg" class="imgDeProducto" alt="Ensalada de Lentejas">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ensalada de Lentejas</h4>
+                                    <p class="textoDeProductotext">Precio: $5800</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ensalada de Lentejas" data-price="5800">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/ensalada de rusa.jpg" class="imgDeProducto" alt="Ensalada Rusa">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ensalada Rusa</h4>
+                                    <p class="textoDeProductotext">Precio: $4700</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ensalada Rusa" data-price="4700">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Empanadas -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 id="empanadas" class="SubTituloDeProducto">Empanadas</h3></div>
+                        <div class="Producto">
+                            <div class="subProducto">
+                                <img src="img/empanadas de atun.jpg" class="imgDeProducto" alt="Empanada de Atún">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Atún</h4>
+                                    <p class="textoDeProductotext">Precio: $1650</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Atún" data-price="1650">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/empanadas de pollo.jpg" class="imgDeProducto" alt="Empanada de Pollo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Pollo</h4>
+                                    <p class="textoDeProductotext">Precio: $1500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Pollo" data-price="1500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/empanadas de carne.jpg" class="imgDeProducto" alt="Empanada de Carne">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Carne</h4>
+                                    <p class="textoDeProductotext">Precio: $1500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Carne" data-price="1500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/empanadas de matambre.jpg" class="imgDeProducto" alt="Empanada de Matambre">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Matambre</h4>
+                                    <p class="textoDeProductotext">Precio: $1650</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Matambre" data-price="1650">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/empanada-cebolla-y-queso.jpg" class="imgDeProducto"  alt="Empanada de Cebolla y Queso" >
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Cebolla y Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $1500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Cebolla y Queso" data-price="1500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/empanadas de jamon y queso.jpg" class="imgDeProducto" alt="Empanada de Jamón y Queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Jamón y Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $1500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Jamón y Queso" data-price="1500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/empanadas de queso, jamón y piña.jpg" class="imgDeProducto" alt="Empanada de Jamón, Queso y Piña">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Jamón, Queso y Piña</h4>
+                                    <p class="textoDeProductotext">Precio: $1650</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Jamón, Queso y Piña" data-price="1650">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/empanadas de salmon.jpg" class="imgDeProducto" alt="Empanada de Salmón">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Salmón</h4>
+                                    <p class="textoDeProductotext">Precio: $1700</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Salmón" data-price="1700">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/empanadas de verduras.jpg" class="imgDeProducto" alt="Empanada de Verdura">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Verdura</h4>
+                                    <p class="textoDeProductotext">Precio: $1500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Verdura" data-price="1500">Agregar al Carrito</button>
+    
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/empanadas de humita.jpg" class="imgDeProducto" alt="Empanada de Humita">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada de Humita</h4>
+                                    <p class="textoDeProductotext">Precio: $1650</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada de Humita" data-price="1650">Agregar al Carrito</button>
+    
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Empanadas de caprese.jpg" class="imgDeProducto" alt="Empanada Caprese">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada Caprese</h4>
+                                    <p class="textoDeProductotext">Precio: $1650</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada Caprese" data-price="1650">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Empanadas de arabe.jpg" class="imgDeProducto" alt="Empanada Árabe">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Empanada Árabe</h4>
+                                    <p class="textoDeProductotext">Precio: $1800</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Empanada Árabe" data-price="1800">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Tarta saladas -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 id="tartas" class="SubTituloDeProducto">Tartas saladas</h3></div>
+                        <div class="Producto">
+                            <div class="subProducto">
+                                <img src="img/tarta de atún.jpg" class="imgDeProducto" alt="Tarta Actún">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tarta Actún</h4>
+                                    <p class="textoDeProductotext">Precio: $2500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tarta Actún" data-price="2500">Agregar al Carrito</button>
+    
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/tarta de pollo.jpg" class="imgDeProducto" alt="Tarta de Pollo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tarta de Pollo</h4>
+                                    <p class="textoDeProductotext">Precio: $2500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tarta de Pollo" data-price="2500">Agregar al Carrito</button>
+    
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/tarta de carne.jpg" class="imgDeProducto" alt="Tarta de Carne">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tarta de Carne</h4>
+                                    <p class="textoDeProductotext">Precio: $2500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tarta de Carne" data-price="2500">Agregar al Carrito</button>
+    
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/tarta de cebolla y queso.jpg" class="imgDeProducto" alt="Tarta de Cebolla y Queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tarta de Cebolla y Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $2500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tarta de Cebolla y Queso" data-price="2500">Agregar al Carrito</button>
+    
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/tarta de jamon y queso.jpg" class="imgDeProducto" alt="Tarta de Jamón y Queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tarta de Jamón y Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $2500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tarta de Jamón y Queso" data-price="2500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/tarta de salmon.jpg" class="imgDeProducto" alt="Tarta de Salmón">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tarta de Salmón</h4>
+                                    <p class="textoDeProductotext">Precio: $3000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tarta de Salmón" data-price="3000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/tarta de verduras sin tacc y vegana.jpg" class="imgDeProducto" alt="Tarta de Verdura">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tarta de Verdura sin tarta y vegana</h4>
+                                    <p class="textoDeProductotext">Precio: $2500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tarta de Verdura" data-price="2500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/tarta de caprese.jpg" class="imgDeProducto" alt="Tarta Caprese">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tarta Caprese</h4>
+                                    <p class="textoDeProductotext">Precio: $2500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tarta Caprese" data-price="2500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/tarta de calabaza, choclo y queso.jpg" class="imgDeProducto" alt="Tarta de Calabaza, Choclo y Queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tarta de Calabaza, Choclo y Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $2500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tarta de Calabaza, Choclo y Queso" data-price="2500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Hamburguesas -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 id="hamburguesas" class="SubTituloDeProducto">Hamburguesas</h3></div>
+                        <div class="Producto">
+                            <div class="subProducto">
+                                <img src="img/hamburguesas completas.jpg" class="imgDeProducto" alt="Hamburguesa Completa">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Hamburguesa Completa</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Hamburguesa Completa" data-price="12000">Agregaral Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/hamburguesas de garbanzos.jpg" class="imgDeProducto" alt="Hamburguesa de Garbanzos">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Hamburguesa de Garbanzos</h4>
+                                    <p class="textoDeProductotext">Precio: $9000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Hamburguesa de Garbanzos" data-price="9000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/hamburguesas con cheddar y panceta.jpg" class="imgDeProducto" alt="Hamburguesa con Cheddar y Panceta">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Hamburguesa con Cheddar y Panceta</h4>
+                                    <p class="textoDeProductotext">Precio: $11000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Hamburguesa con Cheddar y Panceta" data-price="11000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/hamburguesas clasicas.jpeg" class="imgDeProducto" alt="Hamburguesa Clásica">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Hamburguesa Clásica</h4>
+                                    <p class="textoDeProductotext">Precio: $9000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Hamburguesa Clásica" data-price="9000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/hamburguesas de lentejas.jpg" class="imgDeProducto" alt="Hamburguesa de Lentejas">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Hamburguesa de Lentejas</h4>
+                                    <p class="textoDeProductotext">Precio: $9000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Hamburguesa de Lentejas" data-price="9000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/hamburguesas con queso.jpg" class="imgDeProducto" alt="Hamburguesa de Queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Hamburguesa de Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $10000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Hamburguesa de Queso" data-price="10000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/hamburguesas de pollo.jpg" class="imgDeProducto" alt="Hamburguesa de Pollo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Hamburguesa de Pollo</h4>
+                                    <p class="textoDeProductotext">Precio: $10000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Hamburguesa de Pollo" data-price="10000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/hamburguesas de queso y cebolla.jpg" class="imgDeProducto" alt="Hamburguesa de Queso y Cebolla">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Hamburguesa de Queso y Cebolla</h4>
+                                    <p class="textoDeProductotext">Precio: $10000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Hamburguesa de Queso y Cebolla" data-price="10000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/hamburguesas sin tacc.png" class="imgDeProducto" alt="Hamburguesa Sin TACC">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Hamburguesa Sin TACC</h4>
+                                    <p class="textoDeProductotext">Precio: $10000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Hamburguesa Sin TACC" data-price="10000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Milanesas -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 id="milanesas" class="SubTituloDeProducto">Milanesas</h3></div>
+                        <div class="Producto">
+                            <div class="subProducto">
+                                <img src="img/Milanesas compreta.jpg" class="imgDeProducto" alt="Milanesa Completa">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Milanesa Completa</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Milanesa Completa" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Milanesa Napolitana.jpg" class="imgDeProducto" alt="Milanesa Napolitana">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Milanesa Napolitana</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Milanesa Napolitana" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/milanesas con huevo.jpg" class="imgDeProducto" alt="Milanesa con Huevo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Milanesa con Huevo</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Milanesa con Huevo" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Milanesas clasica.jpg" class="imgDeProducto" alt="Milanesa Clásica">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Milanesa Clásica</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición" class="opcionesDeProducto">Elegir guarnición:</label>
+                                    <select id="guarnicion" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Milanesa Clásica" data-price="12000">Agregar al  Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/milanesa con cheddar y panceta.jpg" class="imgDeProducto" alt="Milanesa con Cheddar y Panceta">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Milanesa con Cheddar y Panceta</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Milanesa con Cheddar y Panceta" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/milanesas jamon y queso.jpeg" class="imgDeProducto" alt="Milanesa Jamón y Queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Milanesa Jamón y Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Milanesa Jamón y Queso" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/milanesas con cebolla.jpeg" class="imgDeProducto" alt="Milanesa con Cebolla">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Milanesa con Cebolla</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Milanesa con Cebolla" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/milanesas de zapallo.jpg" class="imgDeProducto" alt="Milanesa de Zapallo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Milanesa de Zapallo</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Milanesa de Zapallo" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/milanesas de berenjena.jpg" class="imgDeProducto" alt="Milanesa de Berenjena">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Milanesa de Berenjena</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="guarnición">Elegir guarnición:</label>
+                                    <select id="guarnicion" class="opcionesDeProducto" onchange="actualizarGuarnicion()">
+                                        <option value="papa frita">Papa frita</option>
+                                        <option value="puré mixto">Puré mixto</option>
+                                        <option value="papa">Papa</option>
+                                        <option value="papa al horno">Papa al horno</option>
+                                        <option value="ensalada de tomate y lechuga">Ensalada de tomate y lechuga</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Milanesa de Berenjena" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Pizzas -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 id="pizzas" class="SubTituloDeProducto">Pizzas</h3></div>
+                        <div class="Producto">
+                            <div class="subProducto">
+                                <img src="img/pizza con salame.jpg" class="imgDeProducto" alt="Pizza con Salame">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pizza con Salame</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Pizza con Salame" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/pizza con cebolla y queso.jpg" class="imgDeProducto" alt="Pizza con Cebolla y Queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="Me nuDeIngeriente">Pizza con Cebolla y Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Pizza con Cebolla y Queso"  data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/pizza hawaiana.jpg" class="imgDeProducto" alt="Pizza Hawaiana">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pizza Hawaiana</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Pizza Hawaiana" data-price="12000">Agregar al Carrito</button>
+    
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/PIZZA CON CHORIZO Y QUESO.jpg" class="imgDeProducto" alt="Pizza con Chorizo y Queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pizza con Chorizo y Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Pizza con Chorizo y Queso" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/pizza con jamon crudo y queso.jpeg" class="imgDeProducto" alt="Pizza con Jamón Crudo y Queso">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pizza con Jamón Crudo y Queso</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Pizza con Jamón Crudo y Queso" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/pizza de mozzarella.jpg" class="imgDeProducto" alt="Pizza de Mozzarella">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pizza de Mozzarella</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Pizza de Mozzarella" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Pastas -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 id="pastas" class="SubTituloDeProducto">Pastas</h3></div>
+                        <div class="Producto">
+    
+                            <div class="subProducto">
+                                <img src="img/pasta espagueti.jpg" class="imgDeProducto" alt="Pasta Espagueti">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pasta Espagueti</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="opcionesDeProductoEspagueti">Elegir opcionesDeProducto:</label>
+                                    <select id="opcionesDeProductoEspagueti" class="opcionesDeProducto">
+                                        <option value="opcionesDeProducto Blanca">opcionesDeProducto Blanca</option>
+                                        <option value="opcionesDeProducto Rosa">opcionesDeProducto Rosa</option>
+                                        <option value="opcionesDeProducto Boloñesa">opcionesDeProducto Boloñesa</option>
+                                        <option value="opcionesDeProducto 4 Quesos">opcionesDeProducto 4 Quesos</option>
+                                        <option value="opcionesDeProducto Tucos">opcionesDeProducto Tucos</option>
+                                        <option value="Aceite con Orégano">Aceite con Orégano</option>
+                                        <option value="opcionesDeProducto de Champiñones y Queso">opcionesDeProducto de Champiñones y Queso</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Pasta Espagueti" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Pasta cálenosle de verduras.jpg" class="imgDeProducto" alt="Calabacines Rellenos de Verduras">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Calabacines Rellenos de Verduras</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="opcionesDeProductoEspagueti">Elegir opcionesDeProducto:</label>
+                                    <select id="opcionesDeProductoEspagueti" class="opcionesDeProducto">
+                                        <option value="opcionesDeProducto Blanca">opcionesDeProducto Blanca</option>
+                                        <option value="opcionesDeProducto Rosa">opcionesDeProducto Rosa</option>
+                                        <option value="opcionesDeProducto Boloñesa">opcionesDeProducto Boloñesa</option>
+                                        <option value="opcionesDeProducto 4 Quesos">opcionesDeProducto 4 Quesos</option>
+                                        <option value="opcionesDeProducto Tucos">opcionesDeProducto Tucos</option>
+                                        <option value="Aceite con Orégano">Aceite con Orégano</option>
+                                        <option value="opcionesDeProducto de Champiñones y Queso">opcionesDeProducto de Champiñones y Queso</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Calabacines Rellenos de Verduras" data-price="12000">Agregar al carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/Pastas de lasaña.jpg" class="imgDeProducto" alt="Lasaña">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Lasaña</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="opcionesDeProductoEspagueti">Elegir opcionesDeProducto:</label>
+                                    <select id="opcionesDeProductoEspagueti" class="opcionesDeProducto">
+                                        <option value="opcionesDeProducto Blanca">opcionesDeProducto Blanca</option>
+                                        <option value="opcionesDeProducto Rosa">opcionesDeProducto Rosa</option>
+                                        <option value="opcionesDeProducto Boloñesa">opcionesDeProducto Boloñesa</option>
+                                        <option value="opcionesDeProducto 4 Quesos">opcionesDeProducto 4 Quesos</option>
+                                        <option value="opcionesDeProducto Tucos">opcionesDeProducto Tucos</option>
+                                        <option value="Aceite con Orégano">Aceite con Orégano</option>
+                                        <option value="opcionesDeProducto de Champiñones y Queso">opcionesDeProducto de Champiñones y Queso</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Lasaña" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/pastas ñoquis.jpg" class="imgDeProducto" alt="Pasta Ñoquis">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Pasta Ñoquis</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="opcionesDeProductoEspagueti">Elegir opcionesDeProducto:</label>
+                                    <select id="opcionesDeProductoEspagueti" class="opcionesDeProducto">
+                                        <option value="opcionesDeProducto Blanca">opcionesDeProducto Blanca</option>
+                                        <option value="opcionesDeProducto Rosa">opcionesDeProducto Rosa</option>
+                                        <option value="opcionesDeProducto Boloñesa">opcionesDeProducto Boloñesa</option>
+                                        <option value="opcionesDeProducto 4 Quesos">opcionesDeProducto 4 Quesos</option>
+                                        <option value="opcionesDeProducto Tucos">opcionesDeProducto Tucos</option>
+                                        <option value="Aceite con Orégano">Aceite con Orégano</option>
+                                        <option value="opcionesDeProducto de Champiñones y Queso">opcionesDeProducto de Champiñones y Queso</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Pasta Ñoquis" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/pastas SORRENTINOS.jpg" class="imgDeProducto" alt="Sorrentinos">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Sorrentinos</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="opcionesDeProductoEspagueti">Elegir opcionesDeProducto:</label>
+                                    <select id="opcionesDeProductoEspagueti" class="opcionesDeProducto">
+                                        <option value="opcionesDeProducto Blanca">opcionesDeProducto Blanca</option>
+                                        <option value="opcionesDeProducto Rosa">opcionesDeProducto Rosa</option>
+                                        <option value="opcionesDeProducto Boloñesa">opcionesDeProducto Boloñesa</option>
+                                        <option value="opcionesDeProducto 4 Quesos">opcionesDeProducto 4 Quesos</option>
+                                        <option value="opcionesDeProducto Tucos">opcionesDeProducto Tucos</option>
+                                        <option value="Aceite con Orégano">Aceite con Orégano</option>
+                                        <option value="opcionesDeProducto de Champiñones y Queso">opcionesDeProducto de Champiñones y Queso</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Sorrentinos" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+    
+                            <div class="subProducto">
+                                <img src="img/pastas ravioles.jpg" class="imgDeProducto" alt="Ravioles">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Ravioles</h4>
+                                    <p class="textoDeProductotext">Precio: $12000</p>
+                                    <label for="opcionesDeProductoEspagueti">Elegir opcionesDeProducto:</label>
+                                    <select id="opcionesDeProductoEspagueti" class="opcionesDeProducto">
+                                        <option value="opcionesDeProducto Blanca">opcionesDeProducto Blanca</option>
+                                        <option value="opcionesDeProducto Rosa">opcionesDeProducto Rosa</option>
+                                        <option value="opcionesDeProducto Boloñesa">opcionesDeProducto Boloñesa</option>
+                                        <option value="opcionesDeProducto 4 Quesos">opcionesDeProducto 4 Quesos</option>
+                                        <option value="opcionesDeProducto Tucos">opcionesDeProducto Tucos</option>
+                                        <option value="Aceite con Orégano">Aceite con Orégano</option>
+                                        <option value="opcionesDeProducto de Champiñones y Queso">opcionesDeProducto de Champiñones y Queso</option>
+                                    </select>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Ravioles" data-price="12000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--  Papa -->
+                    <div class="GrupoDeProducto">
+                        <div class="ContenedorTituloProducto"><h3 class="SubTituloDeProducto" id="comida-papa">Comidas a base de Papa en Argentina</h3></div>
+                        <div class="Producto">
+
+                            <!-- Papas a la Provenzal -->
+                            <div class="subProducto">
+                                <img src="img/papas-a-la-provenzal.jpg" class="imgDeProducto" alt="Papas a la Provenzal">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papas a la Provenzal</h4>
+                                    <p class="textoDeProductotext">Precio: $8000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papas a la Provenzal" data-price="8000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Papas al Horno -->
+                            <div class="subProducto">
+                                <img src="img/papas_al_horno.jpg" class="imgDeProducto" alt="Papas al Horno">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papas al Horno</h4>
+                                    <p class="textoDeProductotext">Precio: $8500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papas al Horno" data-price="8500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Papas a la Huancaína -->
+                            <div class="subProducto">
+                                <img src="img/papas_a_la_huancaina.jpg" class="imgDeProducto" alt="Papas a la Huancaína">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papas a la Huancaína</h4>
+                                    <p class="textoDeProductotext">Precio: $9000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papas a la Huancaína" data-price="9000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                          
+                            <!-- Papa Frita -->
+                            <div class="subProducto">
+                                <img src="img/papa_frita.jpg" class="imgDeProducto" alt="Papa Frita">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papa Frita</h4>
+                                    <p class="textoDeProductotext">Precio: $10000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papa Frita" data-price="10000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Tortilla de Papas -->
+                            <div class="subProducto">
+                                <img src="img/tortilla de papa.jpg" class="imgDeProducto" alt="Tortilla de Papas">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Tortilla de Papas</h4>
+                                    <p class="textoDeProductotext">Precio: $9500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Tortilla de Papas" data-price="9500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Papa con Queso Cheddar y Panceta -->
+                            <div class="subProducto">
+                                <img src="img/papa_con_queso_cheddar_y_panceta.jpg" class="imgDeProducto" alt="Papa con Queso Cheddar y Panceta">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papa con Queso Cheddar y Panceta</h4>
+                                    <p class="textoDeProductotext">Precio: $8000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papa con Queso Cheddar y Panceta" data-price="8000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Puré de Papas -->
+                            <div class="subProducto">
+                                <img src="img/pure_de_papas.jpg" class="imgDeProducto" alt="Puré de Papas">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Puré de Papas</h4>
+                                    <p class="textoDeProductotext">Precio: $7500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Puré de Papas" data-price="7500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Papa Rellena -->
+                            <div class="subProducto">
+                                <img src="img/papa_rellena.jpg" class="imgDeProducto" alt="Papa Rellena">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papa Rellena</h4>
+                                    <p class="textoDeProductotext">Precio: $9500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papa Rellena" data-price="9500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Papas Bravas -->
+                            <div class="subProducto">
+                                <img src="img/papas_bravas.jpg" class="imgDeProducto" alt="Papas Bravas">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papas Bravas</h4>
+                                    <p class="textoDeProductotext">Precio: $8500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papas Bravas" data-price="8500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Papa Frita con Huevo -->
+                            <div class="subProducto">
+                                <img src="img/papa_frita_con_huevo.jpg" class="imgDeProducto" alt="Papa Frita con Huevo">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papa Frita con Huevo</h4>
+                                    <p class="textoDeProductotext">Precio: $9000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papa Frita con Huevo" data-price="9000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Papa a la Crema -->
+                            <div class="subProducto">
+                                <img src="img/papa_a_la_crema.jpg" class="imgDeProducto" alt="Papa a la Crema">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papa a la Crema</h4>
+                                    <p class="textoDeProductotext">Precio: $9500</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papa a la Crema" data-price="9500">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                            <!-- Papas Andinas -->
+                            <div class="subProducto">
+                                <img src="img/papas_andinas.jpg" class="imgDeProducto" alt="Papas Andinas">
+                                <div class="ProductoDeTexto">
+                                    <h4 class="ProductoDeIngeriente">Papas Andinas</h4>
+                                    <p class="textoDeProductotext">Precio: $10000</p>
+                                    <input type="number" class="cantidadProducto" value="1" min="1">
+                                    <button class="botonDeProducto" data-name="Papas Andinas" data-price="10000">Agregar al Carrito</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="Pie">
+        <div class="ContenedorDePie">
+            <p class="textoDePie">&copy; 2024 Restaurante Monalisa. Todos los derechos reservados.</p>
+            <p class="textoDePie">Desarrollado por [Sasha Aylén Cabezas Palmeyro]</p>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/botones.js"></script>
+    <script src="js/ProductoSalado.js"></script>
+    <!-- <script src="js/ProductoDulce.js"></script> -->
+    <!-- <script src="js/Berbidad.js"></script> -->
+</body>
+
+</html>

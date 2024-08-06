@@ -1,0 +1,138 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+/* Estilos para el header */
+.contenedorNav {
+    width: 100%;
+    height: auto;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #fce14b;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000; 
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 12px rgb(255, 136, 0);
+    position: fixed;
+}
+
+.grupoDeNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    margin-left: 10%;
+}
+
+.botonDeHamburguesa {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* Oculto por defecto */
+}
+
+.hamburguesa img {
+    height: 30px;
+    width: 30px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.navLista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navImput {
+    position: relative;
+}
+
+.navLink {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.navLink:hover {
+    background-color: #bdff4c;
+    transition: background-color 0.3s ease;
+}
+
+.subNav {
+    display: none;
+    position: absolute;
+    background-color: #abfa93;
+    box-shadow: 0 2px 5px rgba(59, 254, 0, 0.236);
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navImput:hover .subNav {
+    display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .botonDeHamburguesa {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fcfc60fc;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+    }
+
+    .menu.menuAbierto {
+        display: flex;
+    }
+
+    .navLista {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navLink {
+        padding: 15px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 993px) {
+    .botonDeHamburguesa {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .navLista {
+        flex-direction: row;
+    }
+
+    .navLink {
+        padding: 10px 15px;
+        text-align: left;
+    }
+}

@@ -1,0 +1,24 @@
+/* Estilo para el select de líquidos */
+.selectorDeLiquido {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #c9ffbb;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.selectorDeLiquido:focus {
+    border-color: #62ff00;
+    box-shadow: 0 0 5px rgba(174, 255, 0, 0.5);
+}
+
+.selectorDeLiquido option {
+    padding: 10px;
+}
+
+/* Estilo para el contenedor del select */
+.selectorContainer {
+    margin: 10px 0;
+}

@@ -1,0 +1,50 @@
+/* nota de marcas */
+.ParrafoDeNota {
+    display: none;
+    margin: 10px 0;
+}
+
+.ParrafoDeNota.visible {
+    display: block;
+}
+
+.botonDeNota {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.botonDeNota:hover {
+    background-color: #45a049;
+
+}
+
+.tituloDeNota {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.tituloDeNota1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.Nota {
+    max-width: 600px;
+    margin: auto;
+}

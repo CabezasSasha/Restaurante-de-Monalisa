@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Monalisa</title>
+    <link rel="icon" href="Img/favicon.ico" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/Logo.css">
+    <link rel="stylesheet" href="css/Carousel.css">
+    <link rel="stylesheet" href="css/Acciones.css">
+    <link rel="stylesheet" href="css/MenuCards.css">
+    <link rel="stylesheet" href="css/Video.css">
+    <link rel="stylesheet" href="css/contato.css">
+    <link rel="stylesheet" href="css/WhatsApp.css">
+    <link rel="stylesheet" href="css/mapa.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="css/Comentarios.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <header class='contenedorNav'>
+        <nav class="grupoDeNav">
+            <div>
+                <button class="botonDeHamburguesa" type="button" onClick={toggleMenu}>
+                    <span class="hamburguesa"><img src="Img/hamburguesa.png" alt="hamburguesa" /></span>
+                </button>
+                <div class={"menu ${menuOpen ? 'menuAbierto' : '' } "} id=" navbarNav">
+                    <ul class="navLista">
+                        <li class="navImput"><a class="navLink" href="#inicio">Inicio</a></li>
+                        <li class="navImput">
+                            <a class="navLink" href="MenuDeComida.html#comida_salada" id="comidaDropdown Salada">Comida
+                                Salada</a>
+                            <ul class="subNav" aria-labelledby="comidaDropdown">
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#tostadas">Tostadas</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#sandwich">Sandwich</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#ensaladas">Ensaladas</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#empanadas">Empanadas</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#tartas">Tartas</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#hamburguesas">Hamburguesas</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#milanesas">Milanesas</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#pizzas">Pizzas</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#pastas">Pastas</a></li>
+                            </ul>
+                        </li>
+                        <li class="navImput">
+                            <a class="navLink" href="MenuDeComida.html#postres" id="postresDropdown">Postres</a>
+                            <ul class="subNav" aria-labelledby="postresDropdown">
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#cuadraditos">Cuadraditos</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#muffin">Muffin</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#alfajores">Alfajores</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#tortas">Tortas</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#tartas">Tartas</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#budines">Budines</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#otros-postres">Otros Postres</a></li>
+                            </ul>
+                        </li>
+                        <li class="navImput">
+                            <a class="navLink" href="#" id="bebidasDropdown">Bebidas</a>
+                            <ul class="subNav" aria-labelledby="bebidasDropdown">
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#cafe">Café</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#té">Té</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#licuados">Licuados</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#jugos">Jugos</a></li>
+                                <li class='navImput'><a class="navLink" href="MenuDeComida.html#otros-bebidas">Otros Bebidas</a></li>
+                            </ul>
+                        </li>
+                        <li class="navImput"><a class="navLink" href="MenuDeComida.html#carritos">Pedidos</a></li>
+                        <li class="navImput"><a class="navLink" href="#contacto">Contacto</a></li>
+                        <li class="navImput"><a class="navLink" href="#ubicacion">Ubicación</a></li>
+                        <li class="navImput"><a class="navLink" href="#opiniones">Opinión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Logo -->
+        <section>
+            <div class="TitulosDeContenedor">
+                <a href="#" class="LinkImg"><img src="Img/logo.png" alt="Logo" /></a>
+                <h1 class="tituloDeLaPagina" id="inicio">Restaurante Monalisa</h1>
+            </div>
+        </section>
+
+        <!-- carousel -->
+        <section class="ContendorDeCarousel" id="carousel">
+            <div class="carousel-indicators">
+                <button class="boton active" data-slide-to="0"></button>
+                <button class="boton" data-slide-to="1"></button>
+                <button class="boton" data-slide-to="2"></button>
+                <button class="boton" data-slide-to="3"></button>
+            </div>
+            <div class="contededorDeImg">
+                <div class="cadaImg"><img src="Img/carrusel 1.png" class="Imagen" alt="Slide 1"></div>
+                <div class="cadaImg"><img src="Img/carrusel 2.png" class="Imagen" alt="Slide 2"></div>
+                <div class="cadaImg"><img src="Img/carrusel 3.png" class="Imagen" alt="Slide 3"></div>
+                <div class="cadaImg"><img src="Img/carrusel 4.png" class="Imagen" alt="Slide 4"></div>
+            </div>
+            <button class="BotonFecha prev">
+                <span class="BotonVerdadero" aria-hidden="true">&lt;</span>
+                <span class="BotonTitulo">Anterior</span>
+            </button>
+            <button class="BotonFecha next">
+                <span class="BotonVerdadero" aria-hidden="true">&gt;</span>
+                <span class="BotonTitulo">Siguiente</span>
+            </button>
+        </section>
+
+        <!-- Card -->
+        <section class="containerCard">
+            <div class="card">
+                <img class="imagen" src="Img/tarta de Cheesecaake de fruto rojo.jpeg" alt="tarta" />
+                <h2 class="titulo">Tarta de Cheesecaake de fruto rojo</h2>
+                <p class="parrafo">Deliciosas tartas saludables.</p>
+                <p class="valor">$5000</p>
+                <a href="MenuDeComida.html#tarta" class="boton">Ver más</a>
+            </div>
+            <div class="card">
+                <img class="imagen" src="Img/Torta de selva negra.jpg" alt="torta" />
+                <h2 class="titulo">Torta de selva negra</h2>
+                <p class="parrafo">Sin azúcares añadidos.</p>
+                <p class="valor">$7000</p>
+                <a href="MenuDeComida.html#torta" class="boton">Ver más</a>
+            </div>
+            <div class="card">
+                <img class="imagen" src="Img/alfajores de mantecol.jpeg" alt="alfajores" />
+                <h2 class="titulo">Alfajores de mantecol</h2>
+                <p class="parrafo">Artesanales y saludables.</p>
+                <p class="valor">$3500</p>
+                <a href="MenuDeComida.html#alfajor" class="boton">Ver más</a>
+            </div>
+        </section>
+
+        <!-- Acciones -->
+        <section class="sectionDeAcciones">
+            <div class="contemedoresDeAccionGeneral">
+                <h2 class="TitulosDeAcciones">¡Reserva tu comida favorita ahora!</h2>
+                <div class="contenedorDeAcciones">
+                    <div class="acciones">
+                        <a href="MenuDeComida.html#postres" class="botonAccion">Dulce</a>
+                    </div>
+                    <div class="acciones">
+                        <a href="MenuDeComida.html#bebidas" class="botonAccion">Bebidas</a>
+                    </div>
+                    <div class="acciones">
+                        <a href="MenuDeComida.html#comida-salada" class="botonAccion">Salada</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video -->
+        <section class="videos-restaurante">
+            <h2 class="videosTitulo">Nuestros Videos</h2>
+            <div class="videosContainer">
+                <div class="videoWrapper">
+                    <h3 class="videoTitulo">Salón</h3>
+                    <video controls>
+                        <source src="video/salon.mp4" type="video/mp4" />
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+                <div class="videoWrapper">
+                    <h3 class="videoTitulo">Preparación</h3>
+                    <video controls>
+                        <source src="video/cocina.mp4" type="video/mp4" />
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+                <div class="videoWrapper">
+                    <h3 class="videoTitulo">Café</h3>
+                    <video controls>
+                        <source src="video/cafe.mp4" type="video/mp4" />
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section>
+            <div class="ContenedorContanto" id="contacto">
+                <h2 class="tituloDeContanto">Contacto y Reservas</h2>
+                <p class="textoDeContanto">Estamos ubicados en el corazón de Palermo, Buenos Aires. Para hacer una
+                    reserva en el Restaurante de Don Pepito y Don José, puedes contactarnos a través de los siguientes
+                    medios:</p>
+                <ul class="menuDeContanto">
+                    <li class="subNavDeContanto"><img class="iconoHistoria" src="Img/telefono.png"
+                            alt="Teléfono" /><strong>WhatsApp:</strong> +54 9 11 2345 6789</li>
+                    <li class="subNavDeContanto"><img class="iconoHistoria" src="Img/ubicacion.png"
+                            alt="Ubicación" /><strong>Dirección:</strong> Armenia 1850, Palermo Soho, Buenos Aires</li>
+                </ul>
+                <p class="textoDeContanto">Nuestro equipo está disponible para ayudarte a planificar tu visita y
+                    asegurarte una experiencia culinaria inolvidable en nuestro restaurante.</p>
+                <h2 class="tituloDeContanto">Redes Sociales</h2>
+                <p class="textoDeContanto">Síguenos en nuestras redes sociales para mantenerte al día con nuestras
+                    novedades, eventos especiales y ofertas exclusivas:</p>
+                <ul class="menuDeContanto">
+                    <li class="subNavDeContanto"><img class="iconoHistoria" src="Img/facebook.png" alt="Facebook" /><a
+                            href="#" target="_blank" rel="noopener noreferrer"> Facebook</a></li>
+                    <li class="subNavDeContanto"><img class="iconoHistoria" src="Img/instagram.png"
+                            alt="Instagram" /><a href="#" target="_blank" rel="noopener noreferrer"> Instagram</a></li>
+                    <li class="subNavDeContanto"><img class="iconoHistoria" src="Img/Logo x.png" alt="Twitter" /><a
+                            href="#" target="_blank" rel="noopener noreferrer"> Twitter</a></li>
+                </ul>
+                <p class="textoDeContanto">¡Únete a nuestra comunidad en línea y comparte tu experiencia en el
+                    Restaurante de Don Pepito y Don José!</p>
+
+                <div class="WhatsApp">
+                    <a href="https://wa.me/5491123456789" class="whatsapp-float" target="_blank"
+                        rel="noopener noreferrer">
+                        <img class="WhatsAppImg" src="Img/whatsapp.png" alt="WhatsApp" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa -->
+        <section class="contenedorUbicacion">
+            <h2 id="ubicacion" class="tituloPrincipal">Dónde estamos?</h2>
+            <div class="contenedorSubUbicacion">
+                <h3 class='tituloSecunario'>Ubicacion</h3>
+                <iframe class='mapa'
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.6293128716447!2d-58.42838532447712!3d-34.588244956680825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb58706086081%3A0xc276af9063f5ebae!2sArmenia%201850%2C%20C1414DKN%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1718741310447!5m2!1ses-419!2sar"
+                    width="600" height="450" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class='contenedorSubUbicacion'>
+                <h3 class="tituloSecunario">Horario</h3>
+                <p class="texto">Lunes a Viernes: 11:00 a.m. - 10:00 p.m.</p>
+                <p class="texto">Sábado y Domingo: 11:00 a.m. - 11:00 p.m.</p>
+            </div>
+            <div class="contenedorSubUbicacion">
+                <h3 class="tituloSecunario">Dirección</h3>
+                <p class="texto">Armenia 1850</p>
+                <p class="texto">Palermo Soho, Cdad. Autónoma de Buenos Aires</p>
+                <p class="texto">C1414DKN</p>
+                <p class="texto">Argentina</p>
+            </div>
+        </section>
+
+        <!-- Formulario -->
+        <section class="ContenedorFormulario">
+            <h2 class='TituloPrincipal'>Formulario de opinión</h2>
+            <p class='texto'>Sobre comida, servicio, lugar</p>
+
+            <div className="formularioOpinion">
+                <form class="formulario" id="opinionForm"  onSubmit={handleSubmit}>
+                    <div class="ContenedorForm">
+                        <label class='TituloFormulario' for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" required />
+                    </div>
+        
+                    <div class="ContenedorForm">
+                        <label class='TituloFormulario' for="comentario">Comentario</label>
+                        <textarea id="comentario" required></textarea>
+                    </div>
+        
+                    <div class="ContenedorForm">
+                        <label class='TituloFormulario' for="valoracion">Valoración</label>
+                        <select className="opiccionesSelect" id="valoracion" name="valoracion" value={valoracion} required>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+        
+                    <div class="ContenedorForm">
+                        <label class='TituloFormulario' for="fecha">Fecha de la visita:</label>
+                        <input type="date" id="fecha" required />
+                    </div>
+                    <button type="submit" className="BotonDeFormulario">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Comentario -->
+            <section  class="container">
+                <h2 class="containerd tituloPrincipalTabla">Comentarios del Restaurante</h2>
+                <table class="table" border="1">
+                    <thead class='contenedorTitulo'>
+                        <tr class='MenuTitulos'>
+                            <th class='tituloDetabla'>Nombre</th>
+                            <th class='tituloDetabla'>Comentario</th>
+                            <th class='tituloDetabla'>Valoración</th>
+                            <th class='tituloDetabla'>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody class='contenedorTexto' id="comentariosTableBody">
+                        <!-- Comentarios se insertarán aquí -->
+                    </tbody>
+                </table>
+              </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="Pie">
+        <div class="ContenedorDePie">
+            <p class="textoDePie">&copy; 2024 Restaurante Monalisa. Todos los derechos reservados.</p>
+            <p class="textoDePie">Desarrollado por [Sasha Aylén Cabezas Palmeyro]</p>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/Banner.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/Comentarios.js"></script> 
+
+</body>
+
+</html>

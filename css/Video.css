@@ -1,0 +1,86 @@
+.videos-restaurante {
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 14px #fce700;
+    margin-left: 8%;
+    margin-bottom: 2%;
+}
+
+.videosTitulo {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.videosContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.videoWrapper {
+    margin: 10px;
+    width: 30%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.videoWrapper:hover {
+    box-shadow: 0 8px 12px rgb(247, 255, 2);
+}
+
+.videoTitulo {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+    .videosTitulo {
+        font-size: 2rem;
+    }
+
+    .videoWrapper {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .videoTitulo {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .videosTitulo {
+        font-size: 2.5rem;
+    }
+
+    .videoWrapper {
+        width: 45%;
+    }
+
+    .videoTitulo {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .videosTitulo {
+        font-size: 2.7rem;
+    }
+
+    .videoWrapper {
+        width: 45%;
+    }
+
+    .videoTitulo {
+        font-size: 1.4rem;
+    }
+}
+

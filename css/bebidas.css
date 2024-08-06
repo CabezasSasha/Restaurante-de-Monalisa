@@ -1,0 +1,55 @@
+/* Bebidas */
+.bebida {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #abf4b2;
+    color: #fffefe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin: 10px;
+    flex: 1 1 200px;
+}
+
+.nombreBebida {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.ingredientesBebida {
+    font-size: 14px;
+    margin: 5px 0 0;
+}
+
+.grupoDeBebida {
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.btnExpansible {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #cff8cb;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.contenedorBebidas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.TituloDeBebidas {
+    color: #00f521;
+    font-size: 2rem; 
+    text-align: center;
+    margin-bottom: 20px;
+}

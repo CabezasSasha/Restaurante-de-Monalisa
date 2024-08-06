@@ -1,0 +1,125 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+.ContendorDeCarousel {
+    position: relative;
+    width: 90%;
+    margin: 2.9% auto 0; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin-left: 8%;
+}
+
+.contededorDeImg {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cadaImg {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.Imagen {
+    width: 100%;
+    display: block;
+}
+
+.BotonFecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.BotonFecha.prev {
+    left: 10px;
+}
+
+.BotonFecha.next {
+    right: 10px;
+}
+
+.BotonTitulo {
+    display: none;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.boton {
+    background-color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.boton.active {
+    background-color: #fff;
+}
+
+/* Estilos responsivos */
+
+@media(max-width: 480px) {
+    .ContendorDeCarousel {
+        width: 100%;
+        margin-top: 3%;
+        margin-left: 0;
+    }
+
+    .BotonFecha {
+        padding: 5px;
+    }
+
+    .BotonFecha.prev {
+        left: 5px;
+    }
+
+    .BotonFecha.next {
+        right: 5px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .ContendorDeCarousel {
+        width: 90%;
+        margin-top: 3%;
+        margin-left: 0;
+    }
+
+    .BotonFecha {
+        padding: 7px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .ContendorDeCarousel {
+        width: 85%;
+        margin-left: 3%;
+        margin-left: 0;
+    }
+
+    .BotonFecha {
+        padding: 8px;
+    }
+}

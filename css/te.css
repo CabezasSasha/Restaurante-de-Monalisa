@@ -1,0 +1,141 @@
+/* Te */
+.te {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #c2f6c7;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.contenedorPricipalProducto {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.tituloDeProductoPricipal {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contenedorTe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btnExpansible {
+    width: calc(50% - 10px);
+    padding: 10px;
+    max-width: 300px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px auto;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btnExpansible:hover {
+    background-color: #45a049;
+}
+
+.ProductoDeTe {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.oculto {
+    display: none;
+}
+
+/* Estilos para el contenedor de opciones de té */
+.opcionesTe {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-top: 15px; 
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: calc(50% - 20px); 
+    max-width: 300px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.opcionesTe:hover {
+    transform: scale(1.02);
+}
+
+.nombreTe {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.ingredientesTe {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #000000;
+}
+
+.cantidadProducto {
+    width: 50px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.botonDeProducto {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    background-color: #00ff0d;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botonDeProducto:hover {
+    background-color: #48b929;
+}
+
+/* Estilos para los botones de mostrar té */
+.mostrarTeBoton {
+    width: 40% ; 
+    padding: 15px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.mostrarTeBoton:hover {
+    background-color: #45a049;
+}
